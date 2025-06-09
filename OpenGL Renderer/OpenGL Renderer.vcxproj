@@ -137,11 +137,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Square.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Square.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.fs" />

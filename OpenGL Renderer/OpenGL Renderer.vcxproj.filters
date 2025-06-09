@@ -16,6 +16,9 @@
     <Filter Include="Shader Files">
       <UniqueIdentifier>{fd353e1a-874e-4a35-bf94-4791ff8ed185}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Shapes">
+      <UniqueIdentifier>{8131aff7-fc50-4b8b-a264-73b3b9a1912a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -27,9 +30,27 @@
     <ClCompile Include="Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Square.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Square.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
