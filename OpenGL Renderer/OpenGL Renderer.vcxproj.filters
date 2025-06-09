@@ -36,11 +36,8 @@
     <ClCompile Include="Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Square.cpp">
-      <Filter>Source Files\Shapes</Filter>
-    </ClCompile>
     <ClCompile Include="Cube.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Shapes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -50,13 +47,10 @@
     <ClInclude Include="Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Square.h">
+    <ClInclude Include="Cube.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Input.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Cube.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

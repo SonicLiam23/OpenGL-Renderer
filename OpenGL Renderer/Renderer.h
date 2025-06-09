@@ -9,8 +9,8 @@ public:
     Renderer(const char* vertexShaderPath, const char* fragmentShaderPath);
     int InitOpenGL();
 
-    const unsigned int SCR_WIDTH = 800;
-    const unsigned int SCR_HEIGHT = 800;
+    const unsigned int SCR_WIDTH = 1920;
+    const unsigned int SCR_HEIGHT = 1080;
     GLFWwindow* GetWindow();
 
     void Start();

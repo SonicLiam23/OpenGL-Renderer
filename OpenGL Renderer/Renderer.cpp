@@ -7,7 +7,7 @@
 
 #include "Input.h"
 #include "Shader.h"
-#include "Square.h"
+#include "Cube.h"
 
 #include <iostream>
 
@@ -194,7 +194,6 @@ void Renderer::Start()
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, &view[0][0]);
 
         IAmASquare.Bind();
-        //glDrawArrays(GL_TRIANGLES, 0, numOfVertices); // draws from vertices array
 
         for (unsigned int i = 0; i < 10; i++)
         {
@@ -208,7 +207,8 @@ void Renderer::Start()
             model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
             shader->SetMat4("model", model);
 
-            glDrawArrays(GL_TRIANGLES, 0, 36);
+            //glDrawArrays(GL_TRIANGLES, 0, numOfVertices);
+            glDrawElements(GL_TRIANGLES, numOfIndices, GL_UNSIGNED_INT, 0);
         }
 
         glfwSwapBuffers(window);
