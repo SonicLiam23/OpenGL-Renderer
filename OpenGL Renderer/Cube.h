@@ -1,6 +1,8 @@
 #pragma once
+class Shader;
 class Cube
 {
+public:
     Cube();
 
     void Bind();
