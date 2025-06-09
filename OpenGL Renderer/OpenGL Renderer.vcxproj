@@ -136,6 +136,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cube.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
@@ -144,6 +145,7 @@
     <ClCompile Include="Square.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cube.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Shader.h" />

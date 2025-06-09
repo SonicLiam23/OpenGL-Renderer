@@ -3,7 +3,7 @@
 
 int main()
 {
-    Renderer renderer;
+    Renderer renderer("shader.vs", "shader.fs");
 
 
     renderer.Start();

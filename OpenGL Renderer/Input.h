@@ -1,5 +1,5 @@
 #pragma once
-
+// MOSTLY UNUSED FOR NOW!
 class GLFWwindow;
 
 class Input

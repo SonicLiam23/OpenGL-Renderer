@@ -3,33 +3,68 @@
 
 #include "Shader.h"
 
-unsigned int Square::vao = 0;
-unsigned int Square::vbo = 0;
-unsigned int Square::ebo = 0;
-int Square::verticesAmt = 0;
-int Square::indicesAmt = 0;
+unsigned int Cube::vao = 0;
+unsigned int Cube::vbo = 0;
+unsigned int Cube::ebo = 0;
+int Cube::verticesAmt = 0;
+int Cube::indicesAmt = 0;
 
-Square::Square(const char* vertexShaderPath, const char* fragmentShaderPath)
+Cube::Cube()
 {
     InitBuffers();
-    shader = new Shader(vertexShaderPath, fragmentShaderPath);
 }
 
-void Square::Bind()
+void Cube::Bind()
 {
     glBindVertexArray(vao);
 }
 
-void Square::InitBuffers()
+void Cube::InitBuffers()
 {
     if (vao != 0) return; // Already initialized
 
     float vertices[] = {
-        //x      y     z        r     g     b
-        -0.5f, -0.5f, 0.0f,    1.0f, 0.0f, 0.0f,
-         0.5f, -0.5f, 0.0f,    0.0f, 1.0f, 0.0f,
-         0.5f,  0.5f, 0.0f,    0.0f, 0.0f, 1.0f,
-        -0.5f,  0.5f, 0.0f,    1.0f, 1.0f, 1.0f
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
+
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,
+    -0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,
+
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,
+
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 1.0f,
+
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 1.0f
     };
 
     unsigned int indices[] = {
@@ -73,7 +108,7 @@ void Square::InitBuffers()
     glBindVertexArray(0);
 }
 
-void Square::CleanupBuffers() 
+void Cube::CleanupBuffers() 
 {
     glDeleteVertexArrays(1, &vao);
     glDeleteBuffers(1, &vbo);
@@ -81,7 +116,7 @@ void Square::CleanupBuffers()
     vao = vbo = ebo = 0;
 }
 
-void Square::GetIndecesAndVertices(int* i, int* v)
+void Cube::GetIndecesAndVertices(int* i, int* v)
 {
     
     if (v != nullptr)
@@ -92,9 +127,4 @@ void Square::GetIndecesAndVertices(int* i, int* v)
     {
         *i = indicesAmt;
     }
-}
-
-Shader* Square::GetShader()
-{
-    return shader;
 }
