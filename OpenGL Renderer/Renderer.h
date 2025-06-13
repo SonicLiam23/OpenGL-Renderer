@@ -10,7 +10,7 @@ public:
     int InitOpenGL();
 
     const unsigned int SCR_WIDTH = 1920;
-    const unsigned int SCR_HEIGHT = 1080;
+    const unsigned int SCR_HEIGHT = 786;
     GLFWwindow* GetWindow();
 
     void Start();
